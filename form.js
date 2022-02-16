@@ -11,9 +11,9 @@ const errMessages = {
 
 // Validation types database (Key should be a proper form type parameter(e.g. email, tel, number))
 const validationTypes = {
-  email: (emailElm) =>
-    emailElm.value.match(/^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/im),
-  tel: (phoneElm) => phoneElm.value.match(/^[0-9+\s]+$/g),
+  email: (emailField) =>
+    emailField.value.match(/^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/im),
+  tel: (phoneField) => phoneField.value.match(/^[0-9+\s]+$/g),
 };
 
 /***************************************************************************
@@ -41,7 +41,7 @@ for (const element of formFields) {
 
 // Make object containing contact form data
 function formDataReducer(formValues, field) {
-  if (field.name) {
+  if (field.type !== "submit") {
     formValues[field.name] = field.value;
   }
   return formValues;
@@ -52,7 +52,7 @@ function submitAction(fields) {
   const formData = Object.values(fields).reduce(formDataReducer, {});
   let success = true;
   for (const field of fields) {
-    if (field.name && !validateElement(validationTypes, field)) {
+    if (field.type !== "submit" && !validateElement(validationTypes, field)) {
       success = false;
     }
   }

@@ -1,0 +1,25 @@
+/* ************ Strona about ******************************************* */
+.content_about img.troisimage {
+    width: 39%;
+  }
+  .content_about img.mrcoffeeimage {
+    width: 39%;
+  }
+  .content_about div.troistext {
+    width: 50%;
+  }
+  .content_about div.mrcoffeetext {
+    width: 50%;
+  }
+  .content_about div.section {
+    margin: 1rem 0 6rem 0;
+  }
+  .content_about div.section p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+  .content_about div.section h2 {
+    line-height: 3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }

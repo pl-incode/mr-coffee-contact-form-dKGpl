@@ -57,7 +57,7 @@ function submitAction(fields) {
     }
   }
   if (!success) {
-    console.error("Validation error! Check the fields outlined in red!")
+    console.error("Validation error! Check the fields outlined in red!");
     return false;
   }
   console.info("Success! Sent form data: " + JSON.stringify(formData));
@@ -78,21 +78,28 @@ const validateElement = (validationType, field) => {
         return true;
       } else if (field.value) {
         setErr(field, errMessages[key]);
+        return false;
       } else {
         if (field.hasAttribute("required")) {
           setErr(field, errMessages.empty);
+          return false;
         } else {
           rmErr(field);
           return true;
         }
       }
-      break;
-    } else {
-      if (field.hasAttribute("required") && field.value) {
+    } else if (!validationType[field.getAttribute("type")]) {
+      if (field.hasAttribute("required")) {
+        if (field.value) {
+          rmErr(field);
+          return true;
+        } else {
+          setErr(field, errMessages.empty);
+          return false;
+        }
+      } else {
         rmErr(field);
         return true;
-      } else {
-        setErr(field, errMessages.empty);
       }
     }
   }

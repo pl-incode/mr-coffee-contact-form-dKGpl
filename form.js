@@ -25,7 +25,7 @@ const formFields = document.forms.contact.elements;
 
 // Add event listners for form elements
 for (const element of formFields) {
-  if (element.getAttribute("type") !== "submit") {
+  if (element.type !== "submit") {
     // Validate fields live for every field other than submit button
     element.addEventListener("focusout", () =>
       validateElement(validationTypes, element)
@@ -74,36 +74,27 @@ const validateElement = (validationType, field) => {
   for (const key in validationType) {
     if (field.type === key) {
       if (validationType[key](field)) {
-        rmErr(field);
-        return true;
+        return rmErr(field);
       } else if (field.value) {
-        setErr(field, errMessages[key]);
-        return false;
+        return setErr(field, errMessages[key]);
       } else {
-        if (field.hasAttribute("required")) {
-          setErr(field, errMessages.empty);
-          return false;
-        } else {
-          rmErr(field);
-          return true;
-        }
+        return validateRequired(field);
       }
-    } else if (!validationType[field.getAttribute("type")]) {
-      if (field.hasAttribute("required")) {
-        if (field.value) {
-          rmErr(field);
-          return true;
-        } else {
-          setErr(field, errMessages.empty);
-          return false;
-        }
+    } else if (!validationType[field.type]) {
+      if (field.value) {
+        return rmErr(field);
       } else {
-        rmErr(field);
-        return true;
+        return validateRequired(field);
       }
     }
   }
 };
+
+// Validate "required" fields
+const validateRequired = (field) =>
+  field.hasAttribute("required")
+    ? setErr(field, errMessages.empty)
+    : rmErr(field);
 
 /***************************************************************************
  * Error indication mangement
@@ -119,6 +110,7 @@ const setErr = (field, errMessage) => {
   } else {
     field.insertAdjacentHTML("beforebegin", errContainerHTML);
   }
+  return false;
 };
 
 // Remove error message/indication
@@ -128,10 +120,11 @@ const rmErr = (field) => {
   if (errContainer) {
     field.parentNode.removeChild(errContainer);
   }
+  return true;
 };
 
 /***************************************************************************
- * Modal
+ * Modal (based on W3 example)
  ****************************************************************************/
 const modal = document.getElementById("contact-modal"),
   closeButton = document.getElementsByClassName("close")[0];

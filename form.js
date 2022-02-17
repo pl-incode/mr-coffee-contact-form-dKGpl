@@ -72,7 +72,7 @@ function submitAction(fields) {
 // Form fields validation function
 const validateElement = (validationType, field) => {
   for (const key in validationType) {
-    if (field.getAttribute("type") === key) {
+    if (field.type === key) {
       if (validationType[key](field)) {
         rmErr(field);
         return true;

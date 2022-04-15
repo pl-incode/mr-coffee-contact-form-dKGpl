@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Best Cafe in Paris" />
+    <meta
+      name="keywords"
+      content="Mr.Coffee, cafe, coffee, café, relax, chill"
+    />
+    <meta name="author" content="Darek Grabowski" />
+    <link href="application.css" rel="stylesheet" />
+    <link href="contact.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="form.js" defer></script>
+    <title>Mr. Coffee - Contact Us</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header section -->
+      <div class="header">
+        <!-- Menu bar -->
+        <div class="menubar flex c_white c_back">
+          <img
+            class="menu_logo"
+            src="assets/full_logo_white.png"
+            alt="Mr.Cafe logo"
+          />
+          <ul class="menu flex w-800">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">Qui sommes-nous?</a></li>
+            <li>Nous contacter</li>
+          </ul>
+        </div>
+        <!-- Main logo -->
+        <img
+          class="main_logo center"
+          src="assets/logo_mrcoffee.png"
+          alt="Mr.Cafe logo"
+        />
+      </div>
+      <!-- Contact info section -->
+      <div class="content contact_content center">
+        <h2 class="text_center w-500">Dites nous tout !</h2>
+        <section class="contact-form-section">
+          <form name="contact">
+            <div>
+              <label for="Nom">Nom *</label>
+              <input type="text" name="Nom" required />
+            </div>
+            <div>
+              <label for="Prenom">Prénom *</label>
+              <input type="text" name="Prenom" required />
+            </div>
+            <div>
+              <label for="Telephone">Téléphone</label>
+              <input type="tel" name="Telephone" />
+            </div>
+            <div>
+              <label for="Adresse mail">Adresse mail *</label>
+              <input type="email" name="Adresse mail" required />
+            </div>
+            <div>
+              <label for="Message">Message *</label>
+              <textarea
+                type="text"
+                name="Message"
+                placeholder="Tapez votre message ici"
+                required
+              ></textarea>
+            </div>
+            <div>
+              <button
+                id="contact-submit"
+                class="btn_big center w-900 text_center c_white c_back"
+                type="submit"
+              >
+                ENVOYER
+              </button>
+            </div>
+          </form>
+        </section>
+        <h2 class="text_center w-500">On vous attend !</h2>
+        <div class="adress">
+          <h3>Mr.Coffee</h3>
+          <p>15 place Jules Guesde<br />75006 Paris</p>
+          <p>Tel : +33 9 46 25 78 45<br />Mail : contact@mr-coffee.com</p>
+        </div>
+        <!-- Map -->
+        <img class="map" src="assets/carte_contact.png" alt="Map image" />
+      </div>
+      <!-- Footer section -->
+      <div class="footer c_white c_back">
+        <img
+          class="footer_logo v-center"
+          src="assets/logo_blanc.png"
+          alt="Mr.Coffe logo"
+        />
+        <h4 class="text_center">Suivez nous sur les réseaux sociaux !</h4>
+        <div class="social_icons center flex">
+          <a href="#"
+            ><img
+              class="social_icon center"
+              src="assets/logo_linkedin.png"
+              alt="Go to Linkedin profile"
+          /></a>
+          <a href="#"
+            ><img
+              class="social_icon center"
+              src="assets/logo_twitter.png"
+              alt="Go to Twitter profile"
+          /></a>
+          <a href="#"
+            ><img
+              class="social_icon center"
+              src="assets/logo_facebook.png"
+              alt="Go to Facebook profile"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="contact-modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <img class="modal-logo" src="assets/logo_dark.png" alt="Mr.Cafe logo" />
+        <div class="contact-modal-content">
+          <h3 class="text_center">MERCI</h3>
+          <h3 class="text_center">Votre message a bien été envoyé !</h3>
+          <p class="w-800">
+            Nous essaierons d’y répondre au mieux dans les plus brefs délais. À
+            bientot chez Mr.Coffee
+          </p>
+        </div>
+        <button class="close btn_big center w-900 text_center c_white c_back">
+          FERMER
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

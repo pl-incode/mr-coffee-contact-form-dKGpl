@@ -1,0 +1,319 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #5b5b5b;
+  background-color: #fff;
+  font-size: 20px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ********************************************************************* */
+
+/* Colors */
+.c_white {
+  color: #fff;
+}
+.c_back {
+  background-color: #6d7a89;
+}
+.c_back_light {
+  background-color: #bec3c8;
+}
+
+/* ************ Format helpers ***************************************** */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.v-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* ************ Flexbox setup ***************************************** */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.flex.align-items-center {
+  align-items: center;
+}
+.flex.align-items-bottom {
+  align-items: flex-end;
+}
+.flex.align-items-stretch {
+  align-items: stretch;
+}
+.flex.left {
+  justify-content: flex-start;
+}
+.flex.space-around {
+  justify-content: space-around;
+}
+.flex.reversed {
+  flex-direction: row-reverse;
+}
+
+/* ************ Font helpers ******************************************* */
+.text_center {
+  text-align: center;
+}
+.w-400 {
+  font-weight: 400;
+}
+.w-500 {
+  font-weight: 500;
+}
+.w-600 {
+  font-weight: 600;
+}
+.w-700 {
+  font-weight: 700;
+}
+.w-800 {
+  font-weight: 800;
+}
+.w-900 {
+  font-weight: 900;
+}
+
+/* ************ Cienie ************************************************* */
+.text_shadow {
+  text-shadow: 2px 5px 5px #888888;
+}
+.text_shadow_sm {
+  text-shadow: 2px 2px 2px #888888;
+}
+.box_shadow {
+  box-shadow: 2px 2px 3px #888888;
+}
+
+/* ********************************************************************* */
+/* ************ Elementy wspólne *************************************** */
+/* ********************************************************************* */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.menubar {
+  height: 3.1rem;
+}
+.menu {
+  margin-right: 2.5rem;
+}
+.menu li {
+  list-style: none;
+  font-size: 0.8rem;
+  margin-left: 1.7rem;
+}
+.content {
+  margin: auto;
+  padding: 0 5.5rem;
+}
+.footer {
+  position: relative;
+  height: 6.3rem;
+  margin-top: 3rem;
+}
+.footer h4 {
+  margin-top: 1.5rem;
+}
+.menubar,
+.footer {
+  padding: 0.7rem 2.2rem;
+}
+.menubar a,
+.footer a {
+  color: #fff;
+}
+.social_icons {
+  width: 9rem;
+}
+.btn_big {
+  width: 18rem;
+  height: 4.2rem;
+  border: none;
+  margin: 4rem auto;
+  font-size: 1.35rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Logos & icons */
+.main_logo {
+  width: 11rem;
+}
+.menu_logo {
+  width: 9rem;
+}
+.open_icon {
+  width: 5.5rem;
+}
+.social_icon {
+  width: 1.5rem;
+}
+.footer_logo {
+  position: absolute;
+  width: 3rem;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* ********************************************************************* */
+/* ************ Media ************************************************** */
+/* ********************************************************************* */
+
+/* ************ Stała szerokość zawartości dla bardzo dużych ekranów *** */
+@media screen and (min-width: 1900px) {
+  html,
+  body {
+    font-size: 24px;
+  }
+  .content {
+    width: 1650px;
+  }
+}
+/*  Zmniejszanie elementów strony poprzez zmianę bazowego rozmiaru fontu */
+@media screen and (max-width: 1799px) {
+  html,
+  body {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 1599px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1399px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+/* ************ Zmiana trybu wyświetlania na mobilny dla strony About ** */
+@media screen and (max-width: 999px) {
+  html,
+  body {
+    font-size: 13px;
+  }
+  .section.flex {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .content_about img.troisimage,
+  .content_about img.mrcoffeeimage {
+    width: 50%;
+  }
+  .content_about div.troistext,
+  .content_about div.mrcoffeetext {
+    width: 97%;
+  }
+  .content_about img.troisimage,
+  .content_about img.mrcoffeeimage {
+    margin-bottom: 1rem;
+  }
+  .contact_content {
+    width: 70%;
+  }
+}
+
+/* ************ Zmiana trybu wyświetlania na mobilny dla wszystkich **** */
+@media screen and (max-width: 659px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+  .content {
+    padding: 0 0.1rem;
+  }
+  .menubar {
+    height: 15rem;
+  }
+  .menubar.flex,
+  .menu.flex,
+  .cards_section.flex,
+  .open_info.flex,
+  .info_wrapper.flex,
+  .section.flex {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .menu li {
+    font-size: 1.3rem;
+    margin: 0.1rem 0;
+  }
+  .menubar,
+  .footer {
+    padding: 0.7rem 3rem;
+  }
+  .content_about img.troisimage,
+  .content_about img.mrcoffeeimage,
+  .content_about div.troistext,
+  .content_about div.mrcoffeetext {
+    width: 97%;
+  }
+  .content_about img.troisimage,
+  .content_about img.mrcoffeeimage {
+    margin-bottom: 1rem;
+  }
+  .contact_content {
+    width: 95%;
+  }
+}
+
+/* ************ Dla najmniejszych ekranów ******************************* */
+@media screen and (max-width: 300px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
